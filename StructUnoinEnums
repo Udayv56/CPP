@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+
+//Structure - User defined data type
+typedef struct employee //Different dataTypes in one
+{
+int emId;
+char favChar;
+float salary;
+} ep; // total 9 bytes
+
+union money //unoin  - one value at a time, memory optimization , shared memory
+{
+  int rice; //4
+  char car; //1
+  float pounds; //4
+}; // Total is 4 (maximum of all three)
+int main()
+{
+ep uday;
+struct employee hemant;
+uday.emId = 1;
+uday.favChar = 't';
+uday.salary = 120000;
+
+cout<<"The value is "<<uday.emId<<endl;
+cout<<"The value is "<<uday.favChar<<endl;
+cout<<"The value is "<<uday.salary<<endl;
+cout<,"\n";
+hemant.emId = 2;
+hemant.favChar = 's';
+hemant.salary = 150000;
+
+cout<<"The value is "<<hemant.emId<<endl;
+cout<<"The value is "<<hemant.favChar<<endl;
+cout<<"The value is "<<hemant.salary<<endl;
+cout<"\n";
+union money m1;
+m1.rice = 34;
+cout<<m1.rice<<endl;
+
+enum Meal{breakfast , lunch , dinner};
+cout<<breakfast<<endl;
+cout<<lunch<<endl;
+cout<<dinner<<endl;
+
+return 0;
+}
